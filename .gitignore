@@ -1,0 +1,49 @@
+# --- Takeout payload (never commit your personal photos) ---
+*.jpg
+*.JPG
+*.jpeg
+*.JPEG
+*.png
+*.PNG
+*.heic
+*.HEIC
+*.cr2
+*.CR2
+*.cr3
+*.CR3
+*.bmp
+*.BMP
+*.gif
+*.GIF
+*.mp4
+*.MP4
+*.mov
+*.MOV
+
+# --- Takeout sidecars ---
+*.json
+
+# --- Generated outputs ---
+Organizadas/
+Organized/
+DRY_RUN_REPORT.md
+REPORT.md
+_log.csv
+
+# --- ExifTool fallback payload ---
+Image-ExifTool-*/
+Image-ExifTool-*.tar.gz
+
+# --- Python noise ---
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.env
+
+# --- Editors / OS ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
