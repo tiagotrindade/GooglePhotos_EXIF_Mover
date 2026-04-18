@@ -1,4 +1,5 @@
 # GooglePhotos EXIF Mover
+Tool to organize Google Photos, export via TakeOut, based on EXIF image data/info 
 
 Rebuild a clean, chronologically-ordered photo library out of a Google Takeout
 export.
