@@ -8,10 +8,10 @@ result into a YYYY/MM/DD/ folder tree, so a slideshow that relies on file
 order or EXIF date can play the photos chronologically.
 
 Usage:
-    python3 organizar_fotos.py                 # scans current folder, processes
-    python3 organizar_fotos.py --dry-run       # analyse only, write report
-    python3 organizar_fotos.py --source PATH --dest PATH
-    python3 organizar_fotos.py --verbose
+    python3 organize_photos.py                 # scans current folder, processes
+    python3 organize_photos.py --dry-run       # analyse only, write report
+    python3 organize_photos.py --source PATH --dest PATH
+    python3 organize_photos.py --verbose
 
 The script is idempotent: running it again on the same folder only processes
 new files. Safe to run on a recurring basis as you add more Takeouts.
@@ -72,7 +72,7 @@ IGNORE_NAMES = {
 }
 IGNORE_EXTS = {".tar", ".gz", ".tgz", ".md", ".py", ".csv", ".txt", ".gitignore"}
 # Folders we never descend into (both destination output and dev stuff).
-IGNORE_DIRS = {"Organizadas", "Organized", ".git", "__pycache__"}
+IGNORE_DIRS = {"Organized", ".git", "__pycache__"}
 
 
 def locate_exiftool() -> str:
@@ -627,7 +627,7 @@ def main():
     args = ap.parse_args()
 
     source = Path(args.source).resolve()
-    dest = Path(args.dest).resolve() if args.dest else source / "Organizadas"
+    dest = Path(args.dest).resolve() if args.dest else source / "Organized"
 
     if not args.dry_run:
         EXIFTOOL_PATH = locate_exiftool()

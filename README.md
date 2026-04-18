@@ -25,7 +25,7 @@ This script handles all of that:
    tags into the media file using **ExifTool**.
 4. Resets the filesystem mtime to the real capture date, as a belt-and-braces
    fallback for slideshow apps that ignore EXIF.
-5. Copies the result into a tidy `Organizadas/YYYY/MM/DD/` tree (Europe/Lisbon
+5. Copies the result into a tidy `Organized/YYYY/MM/DD/` tree (Europe/Lisbon
    local time), leaving the originals untouched.
 
 The intended use-case is a photo frame / iPad wall display that polls a shared
@@ -46,7 +46,7 @@ folder on a NAS and slideshows from oldest to newest.
 
 ## Installation
 
-Copy `organizar_fotos.py` into the folder that contains your Takeout dump
+Copy `organize_photos.py` into the folder that contains your Takeout dump
 (the folder with all the `.jpg` / `.heic` / `.json` files, possibly inside
 subfolders produced by Takeout), or run it from anywhere pointing at that
 folder with `--source`.
@@ -55,10 +55,10 @@ folder with `--source`.
 
 ```bash
 # Always start with a dry-run to see what would happen:
-python3 organizar_fotos.py --dry-run
+python3 organize_photos.py --dry-run
 
 # Process for real:
-python3 organizar_fotos.py --verbose
+python3 organize_photos.py --verbose
 ```
 
 Running the command again on the same folder only processes **new** files.
@@ -70,7 +70,7 @@ export into the same place and re-run.
 | Flag | Default | What it does |
 |---|---|---|
 | `--source PATH` | `.` | Folder with the Takeout dump (scanned recursively). |
-| `--dest PATH` | `<source>/Organizadas` | Where the cleaned-up photos land. |
+| `--dest PATH` | `<source>/Organized` | Where the cleaned-up photos land. |
 | `--dry-run` | off | Write `DRY_RUN_REPORT.md`, touch nothing. |
 | `--verbose` | off | Print progress every 100 files. |
 
@@ -87,7 +87,7 @@ export into the same place and re-run.
 |-- IMG_0001.JPG
 |-- IMG_0001.JPG.supplemental-metadata.json
 |-- ...
-|-- Organizadas/
+|-- Organized/
     |-- 2019/
     |   |-- 07/
     |   |   |-- 22/
